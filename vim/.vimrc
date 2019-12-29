@@ -4,7 +4,7 @@ call pathogen#infect()
 
 syntax on
 
-colo  solarized
+colo  gruvbox
 set background=dark
 filetype plugin indent on
 
@@ -199,7 +199,7 @@ vnoremap <Leader>gb :Gbrowse<CR>
 
 " air-line
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='bubblegum'
+let g:airline_theme='bubblegum'
 
 
 
@@ -235,11 +235,15 @@ let g:airline#extensions#tabline#enabled = 1 "Habilita o breadcrumb que exibe o 
 " git tmux integration
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> {C-h} :TmuxNavigateLeft<cr>
-nnoremap <silent> {C-j} :TmuxNavigateDown<cr>
-nnoremap <silent> {C-k} :TmuxNavigateUp<cr>
-nnoremap <silent> {C-l} :TmuxNavigateRight<cr>
-nnoremap <silent> {C-\} :TmuxNavigatePrevious<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
+
+
+" jellybean custom settings
+let g:jellybeans_use_term_italics = 1
