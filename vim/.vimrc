@@ -10,6 +10,10 @@ filetype plugin indent on
 
 au VimEnter * wincmd w
 
+let mapleader = "\<Space>"
+
+
+
 set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
@@ -41,6 +45,13 @@ Plugin 'ervandew/supertab'
 Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'thoughtbot/vim-rspec'
+"Python notes for tmux runner   uncomment for white space
+"let g:VtrStripLeadingWhitespace = 0
+"let g:VtrClearEmptyLines = 0
+"let g:VtrAppendNewline = 1
+
 "Plugin 'morhetz/gruvbox'
 "Plugin 'HerringtonDarkholme/yats.vim' "TS Syntax
 "
@@ -58,7 +69,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 nmap <C-n> :NERDTreeToggle<CR>
 
-
+below
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
@@ -114,6 +125,11 @@ autocmd StdinReadPre * let s:std_inth
 "=strftime("%c")<cr>p
 nmap du :wincmd w<cr>:normal u<cr>:wincmd w<cr>
 set backup
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 " Dim inactive windows using 'colorcolumn' setting
 " This tends to slow down redrawing, but is very useful.
@@ -240,6 +256,13 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+" tmux runner
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
@@ -247,3 +270,6 @@ let g:tmux_navigator_save_on_switch = 2
 
 " jellybean custom settings
 let g:jellybeans_use_term_italics = 1
+
+" emmet tab key for expansion
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")">")>>

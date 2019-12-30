@@ -118,7 +118,7 @@ if [ -f ~/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerlin
       source ~/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh 
 fi
 
-# export TERM=xterm-256color
+export TERM=xterm-256color
 
 # create a global per-pane variable that holds the pane's PWD
 export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
@@ -138,3 +138,18 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/share/powerline/bindings/bash/powerline.sh
+export TERM=xterm-256color
+
+# Add this to your zshrc or bzshrc file
+# auto attach tmux session when shell is opened
+_not_inside_tmux() { 
+  [[ -z "$TMUX" ]]
+}
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat || conda deactivate
+  fi
+}
+
+ensure_tmux_is_running
