@@ -163,6 +163,8 @@ if exists('+colorcolumn')
   augroup END
 endif
 
+let g:diminacitve_use_colorcolumn = 0
+
 " coc config
  let g:coc_global_extensions = [
     \ 'coc-snippets',

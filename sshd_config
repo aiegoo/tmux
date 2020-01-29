@@ -10,7 +10,7 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-#Port 22
+Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -30,7 +30,7 @@
 
 #LoginGraceTime 2m
 PermitRootLogin yes
-#StrictModes no
+StrictModes no
 #MaxAuthTries 6
 #MaxSessions 10
 
@@ -53,7 +53,7 @@ PubkeyAuthentication yes
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication yes
+PasswordAuthentication yes
 #PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
@@ -122,7 +122,7 @@ ChallengeResponseAuthentication yes
 #	ForceCommand cvs server
 
 #Allow presentation user to login via ssh
-AllowUsers presentation root root2 pawan tony2 git ajay farha work
+AllowUsers presentation root root2 pawan tony2 git ajay farha work aryan
 #Force presentation user to join tmux session on login
 Match User presentation,tmux
     ForceCommand /var/tmux_sessions/connect.sh
