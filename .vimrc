@@ -30,6 +30,8 @@ set t_Co=256
 
 " let Vundle manage Vundle, required
 let $GIT_ASKPASS='true'
+Plugin 'lepture/vim-css'
+Plugin 'craigemery/vim-autotag'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
