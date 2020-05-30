@@ -122,7 +122,7 @@ ChallengeResponseAuthentication yes
 #	ForceCommand cvs server
 
 #Allow presentation user to login via ssh
-AllowUsers presentation root root2 pawan tony2 git ajay farha work aryan
+AllowUsers lightup nandha presentation root root2 pawan tony2 git ajay farha work aryan
 #Force presentation user to join tmux session on login
 Match User presentation,tmux
     ForceCommand /var/tmux_sessions/connect.sh
