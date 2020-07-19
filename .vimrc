@@ -1,3 +1,5 @@
+set nocompatible
+
 set encoding=utf-8
 
 call pathogen#infect()

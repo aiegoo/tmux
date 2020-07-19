@@ -167,3 +167,5 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
 tmux new-session -A -s config
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
