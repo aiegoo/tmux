@@ -70,6 +70,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'dag/vim-fish'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'leafoftree/vim-vue-plugin'
 
 nmap <C-n> :NERDTreeToggle<CR>
 
